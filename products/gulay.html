@@ -22,3 +22,54 @@
 </nav>
 
 <a href="products/market-bag.html">View details</a>
+
+
+<h2>Order Enquiry Form</h2>
+
+<form>
+
+```
+<label for="quantity">Quantity:</label>
+<input type="number" id="quantity" name="quantity" min="1" max="20" required>
+
+<br><br>
+
+<fieldset>
+    <legend>Choose a delivery method:</legend>
+
+    <input type="radio" id="pickup" name="delivery" value="pickup" required>
+    <label for="pickup">Store Pickup</label>
+
+    <input type="radio" id="standard" name="delivery" value="standard">
+    <label for="standard">Standard Delivery</label>
+
+    <input type="radio" id="express" name="delivery" value="express">
+    <label for="express">Express Delivery</label>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend>Optional Extras:</legend>
+
+    <input type="checkbox" id="extra-rice" name="extras" value="extra-rice">
+    <label for="extra-rice">Extra Rice</label>
+
+    <input type="checkbox" id="extra-vegetables" name="extras" value="extra-vegetables">
+    <label for="extra-vegetables">Extra Vegetables</label>
+
+    <input type="checkbox" id="takeout" name="extras" value="takeout">
+    <label for="takeout">Takeout Container</label>
+</fieldset>
+
+<br>
+
+<label for="email">Contact Email:</label>
+<input type="email" id="email" name="email" required>
+
+<br><br>
+
+<button type="submit">Send Order Enquiry</button>
+```
+
+</form>
