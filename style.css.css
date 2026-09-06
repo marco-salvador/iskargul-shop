@@ -1,89 +1,24 @@
-* {
-    box-sizing: border-box;
+/* =========================================================
+   1. VARIABLES
+   ========================================================= */
+
+:root {
+    --brand: #7b2d26;
+    --ink: #3b2416;
+    --muted: #5a5353;
+    --light-bg: #f5ead7;
+    --gold: #d69b32;
+    --cream: #fff8e7;
+    --white: #ffffff;
+    --card-border: #d9b878;
+    --dark-accent: #4f1c18;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #111827;
-    color: white;
-}
 
-header {
-    background: #1e3a8a;
-    padding: 30px;
-    text-align: center;
-}
+/* =========================================================
+   2. BASE STYLES
+   ========================================================= */
 
-header h1 {
-    margin: 0;
-    font-size: 50px;
-}
-
-header p {
-    font-size: 20px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-a {
-    color: #60a5fa;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    color: white;
-}
-
-main {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 20px;
-}
-
-h2 {
-    text-align: center;
-    font-size: 35px;
-}
-
-article {
-    display: inline-block;
-    vertical-align: top;
-    width: 30%;
-    margin: 1%;
-    padding: 20px;
-    background: #1f2937;
-    border-radius: 15px;
-    text-align: center;
-}
-
-article img {
-    display: block;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 15px auto;
-    border-radius: 10px;
-}
-
-article a {
-    display: inline-block;
-    background: #2563eb;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-}
-
-s
 * {
     box-sizing: border-box;
 }
@@ -91,17 +26,22 @@ s
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5ead7;
-    color: #3b2416;
+    background: var(--light-bg);
+    color: var(--ink);
+    line-height: 1.6;
 }
 
-/* HEADER */
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+
 header {
-    background: #7b2d26;
-    color: #fff8e7;
+    background: var(--brand);
+    color: var(--cream);
     text-align: center;
     padding: 35px 20px 25px;
-    border-bottom: 8px solid #d69b32;
+    border-bottom: 8px solid var(--gold);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -119,7 +59,17 @@ header p {
     font-style: italic;
 }
 
-/* NAVIGATION */
+
+/* =========================================================
+   4. NAVIGATION
+   ========================================================= */
+
+nav {
+    background: var(--ink);
+    text-align: center;
+    background: transparent;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -133,46 +83,60 @@ nav li {
 
 nav a {
     display: inline-block;
-    background: #fff8e7;
-    color: #7b2d26;
+    background: var(--cream);
+    color: var(--brand);
     padding: 10px 20px;
     border-radius: 6px;
     font-weight: bold;
+    text-decoration: none;
     transition: 0.2s;
 }
 
 nav a:hover {
-    background: #d69b32;
-    color: white;
+    background: var(--gold);
+    color: var(--white);
 }
 
-/* SHOP LINK */
+
+/* =========================================================
+   5. SHOP LINK
+   ========================================================= */
+
 header > a {
     display: inline-block;
     margin-top: 8px;
     padding: 12px 25px;
-    background: #d69b32;
-    color: white;
+    background: var(--gold);
+    color: var(--white);
     border-radius: 6px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 header > a:hover {
     background: #b77b1f;
 }
 
-/* MAIN */
+
+/* =========================================================
+   6. MAIN
+   ========================================================= */
+
 main {
     max-width: 1150px;
     margin: 35px auto;
-    padding: 0 20px;
+    padding: 0 20px 45px;
 }
 
-/* SECTION TITLE */
+
+/* =========================================================
+   7. SECTION TITLE
+   ========================================================= */
+
 h2 {
     text-align: center;
     font-size: 38px;
-    color: #7b2d26;
+    color: var(--brand);
     margin-bottom: 30px;
     text-transform: uppercase;
 }
@@ -182,53 +146,86 @@ h2::after {
     display: block;
     width: 100px;
     height: 4px;
-    background: #d69b32;
+    background: var(--gold);
     margin: 10px auto;
 }
 
-/* FOOD CARDS */
+
+/* =========================================================
+   8. PRODUCT CARDS
+   ========================================================= */
+
+/*
+   .product-card is the reusable class required by 5.2.
+   article is kept as a fallback so your existing pages
+   still keep the same appearance.
+*/
+
+.product-card,
 article {
     display: inline-block;
     vertical-align: top;
     width: 31%;
     min-height: 500px;
     margin: 1%;
+    margin-bottom: 25px;
     padding: 22px;
-    background: #fff8e7;
-    border: 2px solid #d9b878;
+    background: var(--cream);
+    border: 2px solid var(--card-border);
+    border-left: 6px solid var(--brand);
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 5px 12px rgba(80, 45, 20, 0.18);
     transition: 0.25s;
+    position: relative;
+    overflow: hidden;
 }
 
+.product-card:hover,
 article:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(80, 45, 20, 0.28);
 }
 
-/* FOOD NAME */
+
+/* =========================================================
+   9. PRODUCT NAME
+   ========================================================= */
+
+.product-card h3,
 article h3 {
     margin-top: 0;
     font-size: 28px;
-    color: #7b2d26;
-    border-bottom: 2px dashed #d69b32;
+    color: var(--brand);
+    border-bottom: 2px dashed var(--gold);
     padding-bottom: 10px;
 }
 
-/* TEXT */
+
+/* =========================================================
+   10. PRODUCT TEXT
+   ========================================================= */
+
+.product-card p,
 article p {
     line-height: 1.6;
     font-size: 15px;
+    color: var(--muted);
 }
 
+.product-card p:first-of-type,
 article p:first-of-type {
     color: #b45f06;
     font-weight: bold;
     font-size: 18px;
 }
 
-/* FOOD IMAGE */
+
+/* =========================================================
+   11. PRODUCT IMAGE
+   ========================================================= */
+
+.product-card img,
 article img {
     display: block;
     width: 220px;
@@ -236,56 +233,82 @@ article img {
     object-fit: cover;
     margin: 20px auto;
     border-radius: 10px;
-    border: 5px solid white;
+    border: 5px solid var(--white);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* VIEW DETAILS BUTTON */
+
+/* =========================================================
+   12. VIEW DETAILS BUTTON
+   ========================================================= */
+
+.product-card a,
 article a {
     display: inline-block;
     margin-top: 10px;
     padding: 12px 20px;
-    background: #7b2d26;
-    color: white;
+    background: var(--brand);
+    color: var(--white);
     border-radius: 6px;
     font-weight: bold;
+    text-decoration: none;
     transition: 0.2s;
+    box-shadow: 0 3px 0 var(--dark-accent);
 }
 
+.product-card a:hover,
 article a:hover {
-    background: #d69b32;
-    color: white;
+    background: var(--gold);
+    color: var(--white);
 }
 
-/* MOBILE */
-@media (max-width: 800px) {
-    article {
-        width: 90%;
-        margin: 15px auto;
-        display: block;
-    }
-
-    header h1 {
-        font-size: 40px;
-    }
+.product-card a:active,
+article a:active {
+    transform: translateY(3px);
+    box-shadow: none;
 }
 
 
-/* PRODUCT DETAILS */
+/* =========================================================
+   13. PRODUCT CARD DECORATIONS
+   ========================================================= */
+
+.product-card::before,
+article::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 22px;
+}
+
+.product-card::after,
+article::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   14. PRODUCT DETAILS
+   ========================================================= */
 
 .product-details {
     max-width: 800px;
     margin: 50px auto;
     padding: 35px;
-    background: #fff8e7;
-    border: 3px solid #d69b32;
+    background: var(--cream);
+    border: 3px solid var(--gold);
     border-radius: 18px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(80, 45, 20, 0.25);
 }
 
 .product-details h1 {
-    color: #7b2d26;
+    color: var(--brand);
     font-size: 42px;
     margin-bottom: 25px;
     text-transform: uppercase;
@@ -296,7 +319,7 @@ article a:hover {
     height: 350px;
     object-fit: cover;
     border-radius: 15px;
-    border: 6px solid white;
+    border: 6px solid var(--white);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     margin-bottom: 25px;
 }
@@ -307,41 +330,54 @@ article a:hover {
     color: #4a2c1a;
 }
 
+
+/* =========================================================
+   15. PRODUCT DETAILS TABLE
+   ========================================================= */
+
 .product-details table {
     width: 100%;
     margin: 30px auto;
     border-collapse: collapse;
-    background: white;
+    background: var(--white);
     border-radius: 10px;
     overflow: hidden;
 }
 
 .product-details th {
-    background: #7b2d26;
-    color: white;
+    background: var(--brand);
+    color: var(--white);
     padding: 15px;
     font-size: 17px;
+    border: 1px solid var(--card-border);
 }
 
 .product-details td {
     padding: 15px;
-    border-bottom: 1px solid #d9b878;
+    border: 1px solid var(--card-border);
     font-size: 16px;
+    text-align: center;
 }
 
 .product-details tr:last-child td {
-    border-bottom: none;
+    border-bottom: 1px solid var(--card-border);
 }
+
+
+/* =========================================================
+   16. PRODUCT DETAILS NAVIGATION
+   ========================================================= */
 
 .product-details nav {
     margin-top: 25px;
+    background: transparent;
 }
 
 .product-details nav a {
     display: inline-block;
     padding: 12px 25px;
-    background: #7b2d26;
-    color: white;
+    background: var(--brand);
+    color: var(--white);
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
@@ -349,26 +385,28 @@ article a:hover {
 }
 
 .product-details nav a:hover {
-    background: #d69b32;
+    background: var(--gold);
     transform: scale(1.05);
 }
 
 
-/* ORDER ENQUIRY FORM */
+/* =========================================================
+   17. ORDER ENQUIRY FORM
+   ========================================================= */
 
 form {
     max-width: 750px;
     margin: 40px auto;
     padding: 35px;
-    background: #fff8e7;
-    border: 3px solid #d69b32;
+    background: var(--cream);
+    border: 3px solid var(--gold);
     border-radius: 18px;
     box-shadow: 0 8px 20px rgba(80, 45, 20, 0.25);
 }
 
 form h1,
 form h2 {
-    color: #7b2d26;
+    color: var(--brand);
     text-align: center;
 }
 
@@ -377,27 +415,43 @@ form p {
     line-height: 1.6;
 }
 
+
+/* =========================================================
+   18. FIELDSET AND LEGEND
+   ========================================================= */
+
 fieldset {
     margin: 25px 0;
     padding: 20px;
-    border: 2px solid #d9b878;
+    border: 2px solid var(--card-border);
     border-radius: 12px;
     background: #fffdf5;
 }
 
 legend {
     padding: 5px 12px;
-    background: #7b2d26;
-    color: white;
+    background: var(--brand);
+    color: var(--white);
     border-radius: 6px;
     font-weight: bold;
 }
 
+
+/* =========================================================
+   19. FORM LABELS
+   ========================================================= */
+
 label {
+    display: block;
     margin: 12px 0;
     font-weight: bold;
     color: #4a2c1a;
 }
+
+
+/* =========================================================
+   20. FORM INPUTS
+   ========================================================= */
 
 input[type="text"],
 input[type="email"],
@@ -406,9 +460,10 @@ textarea,
 select {
     width: 100%;
     padding: 12px;
-    border: 2px solid #d9b878;
+    border: 2px solid var(--card-border);
     border-radius: 8px;
-    background: white;
+    background: var(--white);
+    font-family: inherit;
     font-size: 15px;
 }
 
@@ -417,11 +472,22 @@ textarea {
     resize: vertical;
 }
 
+
+/* =========================================================
+   21. VISIBLE FOCUS STATE
+   ========================================================= */
+
+/*
+   Required by 5.2.
+   The outline must remain visible for keyboard users.
+*/
+
 input:focus,
 textarea:focus,
 select:focus {
-    outline: none;
-    border-color: #7b2d26;
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+    border-color: var(--brand);
 }
 
 input[type="radio"],
@@ -430,14 +496,19 @@ input[type="checkbox"] {
     vertical-align: middle;
 }
 
+
+/* =========================================================
+   22. SUBMIT BUTTON
+   ========================================================= */
+
 form button,
 input[type="submit"] {
     display: block;
     width: 100%;
     margin-top: 25px;
     padding: 14px;
-    background: #7b2d26;
-    color: white;
+    background: var(--brand);
+    color: var(--white);
     border: none;
     border-radius: 8px;
     font-size: 17px;
@@ -447,10 +518,26 @@ input[type="submit"] {
 
 form button:hover,
 input[type="submit"]:hover {
-    background: #d69b32;
+    background: var(--gold);
 }
 
-/* ===== BOTTOM KARINDERYA DESIGN ===== */
+
+/* =========================================================
+   23. FOOTER
+   ========================================================= */
+
+footer {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+/* =========================================================
+   24. BOTTOM KARINDERYA DESIGN
+   ========================================================= */
 
 main::after {
     content: "";
@@ -458,24 +545,23 @@ main::after {
     height: 12px;
     margin: 50px auto 0;
     max-width: 1100px;
-    border-top: 3px solid #d69b32;
-    border-bottom: 3px solid #d69b32;
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
 }
 
-/* Bottom section */
-main {
-    padding-bottom: 45px;
-}
 
-/* Karinderya-style bottom decoration */
+/* =========================================================
+   25. BOTTOM SECTION DECORATION
+   ========================================================= */
+
 main::before {
-    content: " (IS)DA • (KAR)NE • (GUL)AY  ";
+    content: " (IS)DA • (KAR)NE • (GUL)AY ";
     display: block;
     text-align: center;
     margin-top: 45px;
     margin-bottom: 25px;
     padding: 18px;
-    background: #7b2d26;
+    background: var(--brand);
     color: #ffe5a0;
     border-radius: 10px;
     font-size: 17px;
@@ -484,65 +570,41 @@ main::before {
     box-shadow: 0 5px 12px rgba(80, 45, 20, 0.25);
 }
 
-/* Make the bottom area feel like a menu board */
-article a {
-    text-decoration: none;
-    box-shadow: 0 3px 0 #4f1c18;
-}
 
-article a:active {
-    transform: translateY(3px);
-    box-shadow: none;
-}
+/* =========================================================
+   26. BOTTOM FOOTER-LOOKING DECORATION
+   ========================================================= */
 
-/* Little decorative corners on food cards */
-article {
-    position: relative;
-    overflow: hidden;
-}
-
-article::before {
-    position: absolute;
-    top: 10px;
-    left: 12px;
-    font-size: 22px;
-}
-
-article::after {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 22px;
-}
-
-/* Bottom footer-looking area */
 body::after {
-    content: "ISKARGUL  •  ULAM NA SULIT  •  PARA SA MGA ESTUDYANTE";
+    content: "ISKARGUL • ULAM NA SULIT • PARA SA MGA ESTUDYANTE";
     display: block;
     text-align: center;
     padding: 25px 15px;
-    background: #3b2416;
+    background: var(--ink);
     color: #ffe5a0;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 1.5px;
 }
 
-/* ===== ABOUT PAGE ===== */
+
+/* =========================================================
+   27. ABOUT PAGE
+   ========================================================= */
 
 .about-content {
     max-width: 850px;
     margin: 50px auto;
     padding: 40px;
-    background: #fff8e7;
-    border: 3px solid #d69b32;
+    background: var(--cream);
+    border: 3px solid var(--gold);
     border-radius: 18px;
     box-shadow: 0 8px 20px rgba(80, 45, 20, 0.25);
     text-align: center;
 }
 
 .about-content h1 {
-    color: #7b2d26;
+    color: var(--brand);
     font-size: 42px;
     text-transform: uppercase;
     margin-bottom: 25px;
@@ -563,25 +625,27 @@ body::after {
 .about-content p::first-letter {
     font-weight: bold;
     font-size: 25px;
-    color: #7b2d26;
+    color: var(--brand);
 }
 
 
-/* ===== CONTACT PAGE ===== */
+/* =========================================================
+   28. CONTACT PAGE
+   ========================================================= */
 
 .contact-content {
     max-width: 850px;
     margin: 50px auto;
     padding: 40px;
-    background: #fff8e7;
-    border: 3px solid #d69b32;
+    background: var(--cream);
+    border: 3px solid var(--gold);
     border-radius: 18px;
     box-shadow: 0 8px 20px rgba(80, 45, 20, 0.25);
 }
 
 .contact-content h1 {
     text-align: center;
-    color: #7b2d26;
+    color: var(--brand);
     font-size: 42px;
     text-transform: uppercase;
     margin-bottom: 30px;
@@ -598,7 +662,7 @@ body::after {
     flex: 1;
     padding: 25px 15px;
     background: #fffdf5;
-    border: 2px solid #d9b878;
+    border: 2px solid var(--card-border);
     border-radius: 12px;
     text-align: center;
     transition: 0.25s;
@@ -630,49 +694,34 @@ body::after {
 }
 
 
-/* ===== MOBILE ===== */
-
-@media (max-width: 700px) {
-    .about-content,
-    .contact-content {
-        margin: 25px 15px;
-        padding: 25px;
-    }
-
-    .about-content h1,
-    .contact-content h1 {
-        font-size: 32px;
-    }
-
-    .contact-info {
-        flex-direction: column;
-    }
-}
-
-/* ===== CONTACT PAGE ONLY ===== */
+/* =========================================================
+   29. CONTACT PAGE ONLY
+   ========================================================= */
 
 .contact-page {
     max-width: 850px;
     margin: 50px auto;
     padding: 40px;
-    background: #fff8e7;
-    border: 3px solid #d69b32;
+    background: var(--cream);
+    border: 3px solid var(--gold);
     border-radius: 18px;
     box-shadow: 0 8px 20px rgba(80, 45, 20, 0.25);
 }
 
-/* Title */
+
+/* CONTACT TITLE */
 
 .contact-page h2 {
     text-align: center;
-    color: #7b2d26;
+    color: var(--brand);
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-/* Description */
+
+/* CONTACT DESCRIPTION */
 
 .contact-page > p {
     text-align: center;
@@ -680,7 +729,8 @@ body::after {
     font-size: 17px;
 }
 
-/* Email and Facebook */
+
+/* EMAIL AND FACEBOOK */
 
 .contact-page > ul {
     list-style: none;
@@ -694,7 +744,7 @@ body::after {
     flex: 1;
     padding: 20px;
     background: #fffdf5;
-    border: 2px solid #d9b878;
+    border: 2px solid var(--card-border);
     border-radius: 12px;
     text-align: center;
     font-weight: bold;
@@ -707,7 +757,8 @@ body::after {
     background: #fff1c9;
 }
 
-/* Form */
+
+/* CONTACT FORM */
 
 .contact-page form {
     max-width: 750px;
@@ -716,29 +767,31 @@ body::after {
 
 .contact-page fieldset {
     padding: 30px;
-    border: 2px solid #d69b32;
+    border: 2px solid var(--gold);
     border-radius: 15px;
     background: #fffdf5;
 }
 
 .contact-page legend {
     padding: 8px 18px;
-    background: #7b2d26;
-    color: white;
+    background: var(--brand);
+    color: var(--white);
     border-radius: 7px;
     font-weight: bold;
 }
 
-/* Labels */
+
+/* CONTACT LABELS */
 
 .contact-page label {
     display: block;
     margin: 18px 0 7px;
-    color: #7b2d26;
+    color: var(--brand);
     font-weight: bold;
 }
 
-/* Inputs */
+
+/* CONTACT INPUTS */
 
 .contact-page input[type="text"],
 .contact-page input[type="email"],
@@ -746,30 +799,35 @@ body::after {
 .contact-page textarea {
     width: 100%;
     padding: 13px;
-    border: 2px solid #d9b878;
+    border: 2px solid var(--card-border);
     border-radius: 8px;
-    background: white;
+    background: var(--white);
+    font-family: inherit;
     font-size: 15px;
 }
 
-/* Message */
+
+/* CONTACT MESSAGE */
 
 .contact-page textarea {
     min-height: 140px;
     resize: vertical;
 }
 
-/* Focus */
+
+/* CONTACT FOCUS */
 
 .contact-page input:focus,
 .contact-page select:focus,
 .contact-page textarea:focus {
-    outline: none;
-    border-color: #7b2d26;
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+    border-color: var(--brand);
     box-shadow: 0 0 0 3px rgba(214, 155, 50, 0.2);
 }
 
-/* Button */
+
+/* CONTACT BUTTON */
 
 .contact-page button {
     width: 100%;
@@ -777,23 +835,50 @@ body::after {
     padding: 14px;
     border: none;
     border-radius: 8px;
-    background: #7b2d26;
-    color: white;
+    background: var(--brand);
+    color: var(--white);
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .contact-page button:hover {
-    background: #d69b32;
+    background: var(--gold);
 }
 
-/* Mobile */
+
+
+@media (max-width: 800px) {
+
+    .product-card,
+    article {
+        width: 90%;
+        margin: 15px auto;
+        display: block;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+}
+
 
 @media (max-width: 700px) {
+
+    .about-content,
+    .contact-content,
     .contact-page {
         margin: 25px 15px;
         padding: 25px;
+    }
+
+    .about-content h1,
+    .contact-content h1 {
+        font-size: 32px;
+    }
+
+    .contact-info {
+        flex-direction: column;
     }
 
     .contact-page > ul {
